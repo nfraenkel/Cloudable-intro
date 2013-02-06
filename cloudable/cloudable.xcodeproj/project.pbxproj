@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1F7E8C16BCCCCD003E975F /* intro_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1F7E8B16BCCCCD003E975F /* intro_logo.png */; };
+		4C1F7E8F16BCCD1B003E975F /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1F7E8E16BCCD1B003E975F /* cloud.png */; };
+		4C1F7E9E16BCF167003E975F /* furley_bg_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1F7E9C16BCF167003E975F /* furley_bg_@2X.png */; };
+		4C1F7E9F16BCF167003E975F /* furley_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1F7E9D16BCF167003E975F /* furley_bg.png */; };
+		4C2D7B4216C22CAB00ADE53B /* request_invite_webSS.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D7B4116C22CAB00ADE53B /* request_invite_webSS.png */; };
 		4CD9B5AE16BB5F5800C1A510 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD9B5AD16BB5F5800C1A510 /* UIKit.framework */; };
 		4CD9B5B016BB5F5800C1A510 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD9B5AF16BB5F5800C1A510 /* Foundation.framework */; };
 		4CD9B5B216BB5F5800C1A510 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD9B5B116BB5F5800C1A510 /* CoreGraphics.framework */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C1F7E8B16BCCCCD003E975F /* intro_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_logo.png; sourceTree = "<group>"; };
+		4C1F7E8E16BCCD1B003E975F /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		4C1F7E9C16BCF167003E975F /* furley_bg_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "furley_bg_@2X.png"; sourceTree = "<group>"; };
+		4C1F7E9D16BCF167003E975F /* furley_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = furley_bg.png; sourceTree = "<group>"; };
+		4C2D7B4116C22CAB00ADE53B /* request_invite_webSS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = request_invite_webSS.png; sourceTree = "<group>"; };
 		4CD9B5A916BB5F5800C1A510 /* cloudable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cloudable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD9B5AD16BB5F5800C1A510 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD9B5AF16BB5F5800C1A510 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +106,11 @@
 		4CD9B5B416BB5F5800C1A510 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C2D7B4116C22CAB00ADE53B /* request_invite_webSS.png */,
+				4C1F7E9C16BCF167003E975F /* furley_bg_@2X.png */,
+				4C1F7E9D16BCF167003E975F /* furley_bg.png */,
+				4C1F7E8E16BCCD1B003E975F /* cloud.png */,
+				4C1F7E8B16BCCCCD003E975F /* intro_logo.png */,
 				4CD9B5B516BB5F5800C1A510 /* cloudable-Info.plist */,
 				4CD9B5B616BB5F5800C1A510 /* InfoPlist.strings */,
 				4CD9B5B916BB5F5800C1A510 /* main.m */,
@@ -164,6 +179,11 @@
 				4CD9B5C216BB5F5800C1A510 /* Default@2x.png in Resources */,
 				4CD9B5C416BB5F5800C1A510 /* Default-568h@2x.png in Resources */,
 				4CD9B5C716BB5F5800C1A510 /* MainStoryboard.storyboard in Resources */,
+				4C1F7E8C16BCCCCD003E975F /* intro_logo.png in Resources */,
+				4C1F7E8F16BCCD1B003E975F /* cloud.png in Resources */,
+				4C1F7E9E16BCF167003E975F /* furley_bg_@2X.png in Resources */,
+				4C1F7E9F16BCF167003E975F /* furley_bg.png in Resources */,
+				4C2D7B4216C22CAB00ADE53B /* request_invite_webSS.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +313,7 @@
 				4CD9B5CF16BB5F5800C1A510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

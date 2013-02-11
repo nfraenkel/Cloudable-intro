@@ -91,6 +91,20 @@
     return NO;
 }
 
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    UITouch *touch = [touches anyObject];
+//    NSLog(@"touched!");
+//    if (touch.view != firstNameTextField) {
+//        [firstNameTextField resignFirstResponder];
+//    }
+//    else if (touch.view != lastNameTextField){
+//        [lastNameTextField resignFirstResponder];
+//    }
+//    else if (touch.view != emailAddressTextField){
+//        [emailAddressTextField resignFirstResponder];
+//    }
+//}
+
 - (IBAction)requestButtonTouched:(id)sender {
 
     NSLog(@"%@", ([self validateEmail:emailAddressTextField.text]) ? @"YES" : @"NO");
@@ -100,6 +114,33 @@
 
 -(void) requestInvite {
     NSLog(@"request!!!!");
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSMutableDictionary *user = [[NSMutableDictionary alloc] init];
+    [user setValue:self.firstNameTextField.text forKey:@"first_name"];
+    [user setValue:self.lastNameTextField.text forKey:@"last_name"];
+    [user setValue:self.emailAddressTextField.text forKey:@"email"];
+    NSMutableDictionary *dataDict = [[NSMutableDictionary alloc] init];
+    [dataDict setValue:@"iJNKwC1U5uVrOIA8mEB6Pxyk4FU/EmW8rmjY28doDuc=" forKey:@"authenticity_token"];
+    [dataDict setValue:user forKey:@"user"];
+    
+    NSString *url = @"http://cloudable.me/users/invitation";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *data = [NSString stringWithFormat:@""];
+    NSData *postData = ([NSJSONSerialization isValidJSONObject:dataDict]) ? [NSJSONSerialization dataWithJSONObject:dataDict options:NSJSONWritingPrettyPrinted error:nil] : [data dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"%@", postData);
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -143,8 +184,6 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"connectiondidfinishloading!");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//    NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
-//    NSLog(@"dict response: %@", dictResponse);
     
     NSLog(@"response data: %@", [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding]);
     

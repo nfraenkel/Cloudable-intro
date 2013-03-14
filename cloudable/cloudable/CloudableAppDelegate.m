@@ -2,20 +2,26 @@
 //  CloudableAppDelegate.m
 //  cloudable
 //
-//  Created by Nathan Fraenkel on 1/31/13.
+//  Created by Nathan Fraenkel on 3/14/13.
 //  Copyright (c) 2013 Nathan Fraenkel. All rights reserved.
 //
 
 #import "CloudableAppDelegate.h"
 
+#import "CloudableViewController.h"
+
 @implementation CloudableAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.viewController = [[CloudableViewController alloc] initWithNibName:@"CloudableViewController" bundle:nil];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

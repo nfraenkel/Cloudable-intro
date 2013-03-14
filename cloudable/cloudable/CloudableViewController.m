@@ -35,7 +35,7 @@
     self.greyBGView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.greyBGView.layer.borderWidth = 1.0;
     
-    // get the cloud count 
+    // get the cloud count
     [self fetchCloudCount];
 }
 
@@ -106,7 +106,7 @@
 //}
 
 - (IBAction)requestButtonTouched:(id)sender {
-
+    
     NSLog(@"%@", ([self validateEmail:emailAddressTextField.text]) ? @"YES" : @"NO");
     [self requestInvite];
 }
